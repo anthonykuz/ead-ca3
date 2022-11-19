@@ -818,3 +818,7 @@ C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x0016
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\refint\ca3_x00162229.dll
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\ca3_x00162229.pdb
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\ref\ca3_x00162229.dll
+C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\build-gz\vYDX+4ZP.gz

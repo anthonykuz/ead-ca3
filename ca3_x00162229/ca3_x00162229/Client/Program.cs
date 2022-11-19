@@ -2,6 +2,7 @@ using ca3_x00162229;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
+
 namespace ca3_x00162229
 {
     public class Program
@@ -16,5 +17,6 @@ namespace ca3_x00162229
 
             await builder.Build().RunAsync();
         }
-    }
+
+    }   
 }

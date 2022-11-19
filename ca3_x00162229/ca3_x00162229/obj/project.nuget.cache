@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HesoKf1LpormfALEMCeVHWg/Th1aka1cg7LfHjCakxQoK4Z6YvR9jPE0UAfsn+3+9kAOHfolMBS902+kqseebg==",
+  "dgSpecHash": "cG3B69W594OzTpWTOUMHS0m5hrqov2/wAdycuHZd5jL34vYwPleXbUNA0JrXu9sdUcV26javW+MdbQEKvk0brQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\ca3_x00162229.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\Anthony\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Anthony\\.nuget\\packages\\microsoft.jsinterop\\6.0.10\\microsoft.jsinterop.6.0.10.nupkg.sha512",
     "C:\\Users\\Anthony\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.10\\microsoft.jsinterop.webassembly.6.0.10.nupkg.sha512",
+    "C:\\Users\\Anthony\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Anthony\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Anthony\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Anthony\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
