@@ -121,6 +121,19 @@
         box-sizing: border-box;
     }
 
+    .fact {
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.244);
+        border-radius: 2rem;
+        display: inline-block;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .listOfFacts {
+        display: grid;
+        grid-template-columns: 1fr
+    }
+
 </style>
 
 <h1>The Anime Index</h1>
@@ -139,19 +152,22 @@
     @*Cover Image*@
     <div class="el el--2">
         <div class="container-img">
-            <img id="anime-img" src="@Image" alt="Anime cover artwork" />
+            <img id="anime-img" src="@Image" alt="Anime artwork" />
             <span id="anime-name">@Name</span>
         </div>
     </div>
 
     @*Fact Cards*@
     <div class="el el--3">  
-
+        <div class="listOfFacts">
+            
+        </div>
     </div>
 </div>
 
 @code {
     private string? UserInput { get; set; }
+    private int FactNumber { get; set; }
 
     public string? Name { get; set; }
     public string? Image { get; set; }
@@ -177,12 +193,25 @@
 
                         if (data != null)
                         {
-                            //Parse your data into a object.
+                            // Parse  data into a object
                             var dataObj = JObject.Parse(data);
-                            Console.WriteLine(dataObj);
-                            //Anime show = new Anime(input, $"{dataObj["img"]}");
-                            Name = input;
-                            Image = $"{dataObj["img"]}";
+
+                            Console.WriteLine($"IMAGE SRC: {Image}");
+
+                            // Add values to variables
+                            Name = input;                               // Name
+                            Image = $"{dataObj["img"]}";                // Image
+
+                            Console.WriteLine($"IMAGE SRC: {Image}");
+
+                            foreach (var item in dataObj["data"]!)      // Facts
+                            {
+                                FactNumber += 1;
+                                Facts.Add($"<div class=\"fact\"><h6>Fact: {FactNumber}</h6><p>{item["fact"]!.ToString()}</p></div>");
+                                //Facts.Add(item["fact"]!.ToString());
+                            }
+
+                            InsertHTML(Facts);
 
                         }
                         else
@@ -196,6 +225,14 @@
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
+        }
+    }
+
+    public void InsertHTML(List<string> facts)
+    {
+        foreach (string item in facts)
+        {
+            Console.WriteLine(item);
         }
     }
 
