@@ -160,7 +160,7 @@
     @*Fact Cards*@
     <div class="el el--3">  
         <div class="listOfFacts">
-            
+            @((MarkupString)Markup!)
         </div>
     </div>
 </div>
@@ -169,6 +169,10 @@
     private string? UserInput { get; set; }
     private int FactNumber { get; set; }
 
+    // Inserted markup
+    public string? Markup {get; set;}
+
+    // Query attributes
     public string? Name { get; set; }
     public string? Image { get; set; }
     public List<string> Facts = new List<string>();
@@ -196,13 +200,17 @@
                             // Parse  data into a object
                             var dataObj = JObject.Parse(data);
 
-                            Console.WriteLine($"IMAGE SRC: {Image}");
+                            // Reset values
+                            if (Facts.Count > 0)
+                            {
+                                Name = "";
+                                Image = "";
+                                Facts.Clear();
+                            }
 
                             // Add values to variables
                             Name = input;                               // Name
                             Image = $"{dataObj["img"]}";                // Image
-
-                            Console.WriteLine($"IMAGE SRC: {Image}");
 
                             foreach (var item in dataObj["data"]!)      // Facts
                             {
@@ -212,11 +220,10 @@
                             }
 
                             InsertHTML(Facts);
-
                         }
                         else
                         {
-                            Console.WriteLine("NO Data----------");
+                            Console.WriteLine("No data.");
                         }
                     }
                 }
@@ -232,7 +239,7 @@
     {
         foreach (string item in facts)
         {
-            Console.WriteLine(item);
+            Markup = Markup + item;
         }
     }
 
