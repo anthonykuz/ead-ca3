@@ -200,13 +200,18 @@
                             // Parse  data into a object
                             var dataObj = JObject.Parse(data);
 
+                            Console.WriteLine(Facts.Count > 0);
                             // Reset values
                             if (Facts.Count > 0)
                             {
                                 Name = "";
                                 Image = "";
+                                Markup = "";
+                                FactNumber = 0;
                                 Facts.Clear();
                             }
+
+                            Console.WriteLine(Facts.Count > 0);
 
                             // Add values to variables
                             Name = input;                               // Name
@@ -239,6 +244,7 @@
     {
         foreach (string item in facts)
         {
+            //Console.WriteLine(item);
             Markup = Markup + item;
         }
     }
