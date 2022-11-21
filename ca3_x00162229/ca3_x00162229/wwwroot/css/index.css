@@ -29,13 +29,16 @@
 }
 
 body {
-    background-color: #343a40;
+    /*background-color: #343a40;*/
+    /*background-color: #232321;*/
+    background-color: #1c1c1a;
 }
 
 h1 {
     cursor: default;
     font-weight: 700;
-    color: #d9480f;
+    /*color: #d9480f;*/
+    color: #FC5830;
     display: flex;
     justify-content: center;
     /*margin: 1.6rem;*/
@@ -59,7 +62,8 @@ input {
     box-sizing: border-box;
     font-size: 26px;
     font-weight: 400;
-    color: #868e96;
+    /*color: #868e96;*/
+    color: #dee2e6;
     outline: none;
     width: 28rem;
 }
@@ -76,7 +80,8 @@ button {
 .subheading {
     cursor: default;
     font-weight: 600;
-    color: #495057;
+    /*color: #495057;*/
+    color: #fff;
     display: flex;
     justify-content: center;
     /*margin: 1.6rem;*/
@@ -97,7 +102,7 @@ button {
 
 .container-search {
     display: grid;
-    grid-template-columns: 30rem 4.5rem;
+    grid-template-columns: 25rem 4.5rem;
     justify-content: center;
     /*grid-template-columns: repeat(2, 1fr);*/
     /*grid-template-rows: repeat(2, 1fr);*/
@@ -127,15 +132,18 @@ button {
     margin-bottom: 2rem;
     margin-right: 0.5rem;
     transition: all 0.3s;
-    background-color: #495057;
+    /*background-color: #495057;*/
+    background-color: #232321;
     /*display: flex;*/
     /*justify-content: space-between;*/
 }
 
-.el--1:hover {
-    background-color: #868e96;
-    transition: all 0.3s;
-}
+    .el--1:hover {
+        /*background-color: #868e96;*/
+        /*background-color: #dee2e6;*/
+        background-color: #bcbdbf;
+        transition: all 0.3s;
+    }
 
 .el--1:hover input {
     color: #212529;
@@ -164,7 +172,9 @@ button {
 
 .el--2,
 .el--3 {
-    background-color: #495057;
+    /*background-color: #495057;*/
+    /*background-color: #1c1c1a;*/
+    background-color: #232321;
 }
 
 .el--2 {
@@ -195,7 +205,9 @@ button {
     padding: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s;
-    color: #868e96;
+    /*color: #868e96;*/
+    color: #dee2e6;
+    cursor: pointer;
 }
 
 .fact-collapsed {
@@ -205,7 +217,9 @@ button {
     padding: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s;
-    color: #868e96;
+    /*color: #868e96;*/
+    color: #dee2e6;
+    cursor: pointer;
 }
 
 .fact-collapsed h6 {
@@ -225,12 +239,16 @@ button {
 }
 
 .fact:hover {
-    background-color: #868e96;
+    /*background-color: #868e96;*/
+    /*background-color: #dee2e6;*/
+    background-color: #bcbdbf;
     transition: all 0.3s;
 }
 
 .fact-collapsed:hover {
-    background-color: #868e96;
+    /*background-color: #868e96;*/
+    /*background-color: #dee2e6;*/
+    background-color: #bcbdbf;
     transition: all 0.3s;
 }
 
@@ -283,6 +301,7 @@ button {
     font-weight: 700;
     margin-top: -0.5rem;
     text-align: center;
-    color: #212529;
+    /*color: #212529;*/
+    color: #dee2e6;
 }
 
