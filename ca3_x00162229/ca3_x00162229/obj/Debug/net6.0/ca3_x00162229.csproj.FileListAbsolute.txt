@@ -810,7 +810,6 @@ C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x0016
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\scopedcss\bundle\ca3_x00162229.styles.css
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\scopedcss\projectbundle\ca3_x00162229.bundle.scp.css
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\ca3_x00162229.csproj.CopyComplete

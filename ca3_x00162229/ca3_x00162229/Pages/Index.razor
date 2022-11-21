@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Newtonsoft.Json.Linq;
+@using System.Globalization;
+
 <PageTitle>The Anime Index</PageTitle>
 
 <style>
@@ -39,7 +41,7 @@
     img {
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 60%;
     }
 
     .subheading {
@@ -166,8 +168,13 @@
 </div>
 
 @code {
+    // User input
     private string? UserInput { get; set; }
-    private int FactNumber { get; set; }
+    public string? UserOutput { get; set; }
+    public string? UserInputFixed { get; set; }
+
+    // Creates a TextInfo based on the "en-US" culture.
+    public TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
     // Inserted markup
     public string? Markup {get; set;}
@@ -175,6 +182,7 @@
     // Query attributes
     public string? Name { get; set; }
     public string? Image { get; set; }
+    private int FactNumber { get; set; }
     public List<string> Facts = new List<string>();
 
     // ---------------------------------------------
@@ -182,8 +190,11 @@
     // Get anime
     public async void GetAnime(string input)
     {
+        UserInputFixed = FixInputString(input);
+        Console.WriteLine(UserInputFixed);
+
         // Base URL
-        string baseUrl = $"https://anime-facts-rest-api.herokuapp.com/api/v1/{input}";
+        string baseUrl = $"https://anime-facts-rest-api.herokuapp.com/api/v1/{UserInputFixed}";
 
         try
         {
@@ -200,7 +211,6 @@
                             // Parse  data into a object
                             var dataObj = JObject.Parse(data);
 
-                            Console.WriteLine(Facts.Count > 0);
                             // Reset values
                             if (Facts.Count > 0)
                             {
@@ -211,10 +221,10 @@
                                 Facts.Clear();
                             }
 
-                            Console.WriteLine(Facts.Count > 0);
+                            UserOutput = OutputName(input);
 
                             // Add values to variables
-                            Name = input;                               // Name
+                            Name = UserOutput;                          // Name
                             Image = $"{dataObj["img"]}";                // Image
 
                             foreach (var item in dataObj["data"]!)      // Facts
@@ -224,11 +234,12 @@
                                 //Facts.Add(item["fact"]!.ToString());
                             }
 
+
                             InsertHTML(Facts);
                         }
                         else
                         {
-                            Console.WriteLine("No data.");
+                            Console.WriteLine("Error: No data.");
                         }
                     }
                 }
@@ -244,9 +255,20 @@
     {
         foreach (string item in facts)
         {
-            //Console.WriteLine(item);
             Markup = Markup + item;
         }
+        StateHasChanged();  
     }
 
+    public string FixInputString(string inputName)
+    {
+        inputName = inputName.Replace(@" ", "_");
+        return myTI.ToLower(inputName);
+    }
+
+    public string OutputName(string inputName)
+    {
+        inputName = inputName.Replace(@"_", " ");
+        return myTI.ToTitleCase(inputName);
+    }
 }
