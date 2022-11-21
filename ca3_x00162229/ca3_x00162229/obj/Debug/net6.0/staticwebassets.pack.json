@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\magnifying-glass.svg",
+      "PackagePath": "staticwebassets\\magnifying-glass.svg"
+    },
+    {
       "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },

@@ -1,18 +1,249 @@
 ﻿@page "/"
-@using Newtonsoft.Json.Linq;
-@using System.Globalization;
 
 <PageTitle>The Anime Index</PageTitle>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /*
+        SPACING SYSTEM (px)
+        2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+        FONT SIZE SYSTEM (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+        COLOURS
+        #d9480f (dark orange)
+        #e8590c
+        #f76707
+        #fd7e14 (light orange)
+
+        #212529 (dark gray)
+        #343a40
+        #495057
+        #868e96 (lighter gray)
+    */
+
+
+    /*-----------------------*/
+    /* Generic Selectors     */
+    /*-----------------------*/
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-family: 'Alexandria', sans-serif;
+    }
+
+    body {
+        background-color: #343a40;
+    }
+
+    h1 {
+        cursor: default;
+        font-weight: 700;
+        color: #d9480f;
+        display: flex;
+        justify-content: center;
+        margin: 1.6rem;
+    }
+
+    svg {
+        fill: #d9480f;
+    }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    input {
+        background: none;
+        border: none;
+        border-radius: 5rem;
+        box-sizing: border-box;
+        font-size: 26px;
+        font-weight: 400;
+        color: #868e96;
+        outline: none;
+        width: 28rem;
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    /*-----------------------*/
+    /* Classes               */
+    /*-----------------------*/
+
+    .subheading {
+        cursor: default;
+        font-weight: 600;
+        color: #495057;
+        display: flex;
+        justify-content: center;
+        margin: 1.6rem;
+        margin-top: -1.6rem;
+    }
+
+    .container-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .container-search {
+        display: grid;
+        grid-template-columns: 30rem 4.5rem;
+        justify-content: center;
+        /*grid-template-columns: repeat(2, 1fr);*/
+        /*grid-template-rows: repeat(2, 1fr);*/
+    }
+    
+    .container-img {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .el {
+        /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);*/
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);
+        transition: all 0.3s;
+        border-radius: 5rem;
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    .el:hover {
+        /*background-color: #868e96;*/
+        transition: all 0.3s;
+    }
+
+    .el--1 {
+        margin-bottom: 2rem;
+        margin-right: 0.5rem;
+        transition: all 0.3s;
+        background-color: #495057;
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+    }
+
+    .el--1:hover {
+        background-color: #868e96;
+        transition: all 0.3s;
+    }
+
+    .el--1:hover input {
+        color: #212529;
+    }
+
+    .el--1-btn {
+        margin-bottom: 2rem;
+        display: flex;
+        transition: all 0.3s;
+        background-color: #d9480f;
+    }
+
+    .el--1-btn:hover {
+        background-color: #e8590c;
+        transition: all 0.3s;
+    }
+
+    .el--1-btn svg {
+        transition: all 0.3s;
+    }
+
+    .el--1-btn:hover svg {
+        transition: all 0.3s;
+        filter: invert(89%) sepia(4%) saturate(937%) hue-rotate(196deg) brightness(111%) contrast(87%);
+    }
+
+    .el--2,
+    .el--3 {
+        background-color: #495057;
+    }
+
+    .el--2 {
+        grid-column: 1 / 1;
+        border-radius: 2rem;
+        margin-right: 2rem;
+        height: 24rem;
+        margin-bottom: 2rem;
+    }
+
+    .el--3 {
+        grid-column: 2 / -1;
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        box-sizing: border-box;
+    }
+
+    .fact {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);
+        border-radius: 2rem;
+        display: inline-block;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .fact:last-child {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);
+        border-radius: 2rem;
+        display: inline-block;
+        padding: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .fact h6 {
+        font-weight: 700;
+    }
+
+    .fact p {
+        font-weight: 400;
+    }
+
+    .listOfFacts {
+        display: grid;
+        grid-template-columns: 1fr
+    }
+
+    /*-----------------------*/
+    /* IDs                   */
+    /*-----------------------*/
+
+    #anime-img {
+        grid-row: 1 / -1;
+    }
+
+    #anime-name {
+        font-weight: 700;
+        margin-top: -0.5rem;
+        text-align: center;
+    }
+
+</style>
 
 <h1>The Anime Index</h1>
 <span class="subheading">the worlds largest repository of anime</span>
-
 
 @*Search Bar*@
 <div class="container-search">
     <div class="el el--1">
         <input type="text" placeholder="Search..." @bind-value="UserInput">
-        <button @onclick='() => GetAnime(UserInput)'>Click me</button>
+    </div>
+    <div class="el el--1-btn ">
+        <button @onclick='() => GetAnime(UserInput)'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
+        </button>
     </div>
 </div>
 
@@ -23,8 +254,8 @@
             @if (Image != null)
             {
                 <img id="anime-img" src="@Image" alt="Anime artwork" />
+                <hr />
             }
-
             <span id="anime-name">@Name</span>
         </div>
     </div>

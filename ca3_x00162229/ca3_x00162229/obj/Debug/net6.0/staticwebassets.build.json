@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FmUIOTqpHUykZnRMrDVsgNyjmiiN6/tVqw6nkJdegz8=",
+  "Hash": "B0YDrwmdKJruGVxnLgsazd7gkCEc+Y8s9H3YqfT/ho4=",
   "Source": "ca3_x00162229",
   "BasePath": "/",
   "Mode": "Root",
@@ -7121,6 +7121,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\magnifying-glass.svg",
+      "SourceId": "ca3_x00162229",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "magnifying-glass.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\magnifying-glass.svg"
     },
     {
       "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\sample-data\\weather.json",

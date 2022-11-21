@@ -821,4 +821,3 @@ C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x0016
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\build-gz\vYDX+4ZP.gz
-C:\Users\Anthony\Desktop\College\Year 4\Enterprise App Dev (Sem7)\labs\ca3_x00162229\ead-ca3\ca3_x00162229\ca3_x00162229\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
