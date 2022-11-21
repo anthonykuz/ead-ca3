@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B0YDrwmdKJruGVxnLgsazd7gkCEc+Y8s9H3YqfT/ho4=",
+  "Hash": "7ZEk98ykjD3Yiexx7IBJ+6xPo9CZ2Czo84HZj40j4aY=",
   "Source": "ca3_x00162229",
   "BasePath": "/",
   "Mode": "Root",
@@ -6919,6 +6919,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\css\\index.css",
+      "SourceId": "ca3_x00162229",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
       "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "ca3_x00162229",
       "SourceType": "Discovered",
@@ -7121,6 +7138,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\js\\script.js",
+      "SourceId": "ca3_x00162229",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
       "Identity": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\magnifying-glass.svg",

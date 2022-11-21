@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
       "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
@@ -71,6 +75,10 @@
     {
       "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
       "Id": "C:\\Users\\Anthony\\Desktop\\College\\Year 4\\Enterprise App Dev (Sem7)\\labs\\ca3_x00162229\\ead-ca3\\ca3_x00162229\\ca3_x00162229\\wwwroot\\magnifying-glass.svg",
