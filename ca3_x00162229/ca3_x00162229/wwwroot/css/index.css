@@ -52,7 +52,13 @@ svg {
 img {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
+    /*height: auto;*/
+    border-radius: 2rem;
+}
+
+hr {
+    color: #fff;
 }
 
 input {
@@ -88,6 +94,10 @@ button {
     margin-top: -1.6rem;
 }
 
+.container-global {
+    min-height: 50%;
+}
+
 .container-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -110,8 +120,11 @@ button {
 
 .container-img {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    /*grid-template-columns: repeat(1, 1fr);*/
+    grid-template-columns: 1fr;
+    /*grid-template-rows: repeat(2, 1fr);*/
+    grid-template-rows: 17rem 2rem;
+    width: 13rem;
 }
 
 .el {
@@ -121,6 +134,7 @@ button {
     border-radius: 5rem;
     display: inline-block;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .el:hover {
@@ -138,12 +152,12 @@ button {
     /*justify-content: space-between;*/
 }
 
-    .el--1:hover {
-        /*background-color: #868e96;*/
-        /*background-color: #dee2e6;*/
-        background-color: #bcbdbf;
-        transition: all 0.3s;
-    }
+.el--1:hover {
+    /*background-color: #868e96;*/
+    /*background-color: #dee2e6;*/
+    background-color: #bcbdbf;
+    transition: all 0.3s;
+}
 
 .el--1:hover input {
     color: #212529;
@@ -179,11 +193,13 @@ button {
 
 .el--2 {
     position: sticky;
-    grid-column: 1 / 1;
+    /*grid-column: 1 / 1;*/
     border-radius: 2rem;
     margin-right: 2rem;
     height: 24rem;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .el--3 {
@@ -294,14 +310,15 @@ button {
 /*-----------------------*/
 
 #anime-img {
-    grid-row: 1 / -1;
+    /*grid-row: 1 / -1;*/
 }
 
 #anime-name {
     font-weight: 700;
-    margin-top: -0.5rem;
+    margin-top: 2rem;
     text-align: center;
     /*color: #212529;*/
     color: #dee2e6;
+    grid-row: 2 / -1;
 }
 
