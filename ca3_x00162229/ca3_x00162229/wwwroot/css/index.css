@@ -95,7 +95,8 @@ button {
 }
 
 .container-global {
-    min-height: 50%;
+    max-width: 80rem;
+    min-width: 50rem;
 }
 
 .container-header {
@@ -315,7 +316,7 @@ button {
 
 #anime-name {
     font-weight: 700;
-    margin-top: 2rem;
+    margin-top: 1.9rem;
     text-align: center;
     /*color: #212529;*/
     color: #dee2e6;
