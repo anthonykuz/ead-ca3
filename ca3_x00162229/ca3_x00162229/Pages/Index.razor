@@ -53,16 +53,15 @@
 @code {
     // User input
     private string? UserInput { get; set; }
-    public string? UserOutput { get; set; }
     public string? UserInputFixed { get; set; }
+
+    public string? UserOutput { get; set; }
 
     // Creates a TextInfo based on the "en-US" culture.
     public TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
     // Inserted markup
     public string? Markup { get; set; }
-
-    public string factClass { get; set; } = "fact-collapsed";
 
     // Query attributes
     public string? Name { get; set; }
@@ -114,8 +113,6 @@
                             {
                                 FactNumber += 1;
                                 Facts.Add($"<div class=\"fact-collapsed\"><h6>Fact: {FactNumber}</h6><p>{item["fact"]!.ToString()}</p></div>");
-                                //Facts.Add($"<div class=\"fact\"><h6>Fact: {FactNumber}</h6><p>{item["fact"]!.ToString()}</p></div>");
-                                //Facts.Add(item["fact"]!.ToString());
                             }
 
 

@@ -1,0 +1,84 @@
+{
+  "id": "383d5f48-36a5-493e-a2a8-5d912e2f481f",
+  "version": "2.0",
+  "name": "ead-ca3",
+  "url": "https://yellow-beach-0ba2fec03.2.azurestaticapps.net/",
+  "tests": [{
+    "id": "6a4c8b45-299d-472b-97e5-c73180363dc4",
+    "name": "SearchAnime",
+    "commands": [{
+      "id": "8868e08a-bca0-4a70-944c-7b636bb9f828",
+      "comment": "",
+      "command": "open",
+      "target": "https://yellow-beach-0ba2fec03.2.azurestaticapps.net/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17c2572c-27bb-4ebb-b94f-3f8252788548",
+      "comment": "",
+      "command": "click",
+      "target": "css=input",
+      "targets": [
+        ["css=input", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/article/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1940472-3dea-4bfa-a0d0-3fe14f7d2ee9",
+      "comment": "",
+      "command": "type",
+      "target": "css=input",
+      "targets": [
+        ["css=input", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/article/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "attack on titan"
+    }, {
+      "id": "e37d0e09-afd7-4ea7-a8a2-d5295318fb5d",
+      "comment": "",
+      "command": "click",
+      "target": "css=svg",
+      "targets": [
+        ["css=svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa6fc13c-99a7-49a4-b34a-8dcb9f09bdbc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fact-collapsed:nth-child(2) > h6",
+      "targets": [
+        ["css=.fact-collapsed:nth-child(2) > h6", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/article/div/div[2]/div[2]/div/div[2]/h6", "xpath:idRelative"],
+        ["xpath=//div[2]/h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Fact: 2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3c423af-9b5b-4bfb-bbca-1675c3e0f400",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fact-collapsed:nth-child(6)",
+      "targets": [
+        ["css=.fact-collapsed:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/article/div/div[2]/div[2]/div/div[6]", "xpath:idRelative"],
+        ["xpath=//div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "30e02e28-af63-43e4-82a5-d19bcc7078dd",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6a4c8b45-299d-472b-97e5-c73180363dc4"]
+  }],
+  "urls": ["https://yellow-beach-0ba2fec03.2.azurestaticapps.net/"],
+  "plugins": []
+}

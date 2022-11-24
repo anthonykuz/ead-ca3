@@ -1,9 +1,6 @@
 ﻿
-document.querySelector('body').addEventListener('click', function (event) {
-    
-});
-
 let touchFact = function (event) {
+    // Checks to see if mouse target has either classes
     if (event.target.className === 'fact-collapsed') {
         event.target.classList.remove('fact-collapsed');
         event.target.classList.add('fact');
@@ -13,6 +10,7 @@ let touchFact = function (event) {
         event.target.classList.remove('fact');
     }
 
+    // Checks to see if parent of the mouse target has either classes
     else if (event.target.parentElement.className === 'fact-collapsed') {
         event.target.parentElement.classList.remove('fact-collapsed');
         event.target.parentElement.classList.add('fact');
