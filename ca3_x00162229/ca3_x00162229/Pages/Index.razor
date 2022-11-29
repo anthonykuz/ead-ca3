@@ -53,6 +53,7 @@
 @code {
     // User input
     private string? UserInput { get; set; }
+
     public string? UserInputFixed { get; set; }
 
     public string? UserOutput { get; set; }
@@ -74,6 +75,11 @@
     // Get anime
     public async void GetAnime(string input)
     {
+        if (input == null)
+        {
+            throw new ArgumentException("Error: input empty.");
+        }
+
         UserInputFixed = FixInputString(input);
 
         // Base URL
@@ -120,7 +126,7 @@
                         }
                         else
                         {
-                            Console.WriteLine("Error: No data.");
+                            throw new ArgumentException("Error: No returned data.");
                         }
                     }
                 }
