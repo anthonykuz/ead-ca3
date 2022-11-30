@@ -71,7 +71,7 @@ input {
     /*color: #868e96;*/
     color: #dee2e6;
     outline: none;
-    width: 28rem;
+    width: 20rem;
 }
 
 button {
@@ -115,8 +115,10 @@ button {
     display: grid;
     grid-template-columns: 25rem 4.5rem;
     justify-content: center;
-    /*grid-template-columns: repeat(2, 1fr);*/
-    /*grid-template-rows: repeat(2, 1fr);*/
+}
+
+form {
+    margin-right: -50rem;
 }
 
 .container-img {

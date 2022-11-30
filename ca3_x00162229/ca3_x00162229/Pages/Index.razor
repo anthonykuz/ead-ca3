@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using System.Text.Json;
 @inject IJSRuntime jsRuntimeService
 
 <PageTitle>The Anime Index</PageTitle>
@@ -17,16 +18,16 @@
 
         @*Search Bar*@
         <div class="container-search">
-            <div class="el el--1">
-                <input type="text" placeholder="Search..." @bind-value="UserInput">
-            </div>
-            <div class="el el--1-btn ">
-                <EditForm Model="@title" OnSubmit=@FormSubmitted>
-                    <button type="submit" @onclick='async () => await title.GetAnime(UserInput)'>
+            @*<EditForm Model="@input" OnSubmit=@FormSubmitted>
+            </EditForm>*@
+                <div class="el el--1">
+                    <input type="text" placeholder="Search..." @bind-value="input.Query">
+                </div>
+                <div class="el el--1-btn ">
+                    <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
                     </button>
-                </EditForm>
-            </div>
+                </div>    
         </div>
     </div>
 
@@ -34,12 +35,12 @@
         @*Cover Image*@
         <div class="el el--2">
             <div class="container-img">
-                @if (title.Image != null)
+                @if (selectedTitle.Image != null)
                 {
-                    <img id="anime-img" src="@title.Image" alt="Anime artwork" />
+                    <img id="anime-img" src="@selectedTitle.Image" alt="Anime artwork" />
                     <div id="anime-name">
                         <hr />
-                        <span id="">@title.Name</span>
+                        <span id="">@selectedTitle.Name</span>
                     </div>
                 }
             </div>
@@ -48,22 +49,65 @@
         @*Fact Cards*@
         <div class="el el--3" onclick="touchFact(event)">
             <div class="listOfFacts">
-                @((MarkupString)title.Markup!)
+                @*@((MarkupString)selectedTitle.Markup!)*@
             </div>
         </div>
     </div>
+
 </div>
+
 @code {
     // User input
-    [Required]
-    private string? UserInput { get; set; }
+    UserInput input = new UserInput();
 
-    List<AnimeTitle> result = new List<AnimeTitle>();
+    AnimeTitle selectedTitle = new AnimeTitle();
+    Rootobject root = new Rootobject();
 
     string? LastSubmitResult;
-    AnimeTitle title = new AnimeTitle();
 
     // ---------------------------------------------
+
+    protected async override Task OnInitializedAsync()
+    {
+        await AddTitles();
+    }
+
+    async Task AddTitles()
+    {
+        // Base URL (based of the heroku hosted API)
+        //string baseUrl = $"https://anime-facts-rest-api.herokuapp.com/api/v1/{FixInputString(input)}";
+
+        // Mock API result
+        string baseUrl = "https://anime-facts.azure-api.net/v1/get-facts";
+
+        // Get response
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync(baseUrl))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        var data = await content.ReadAsStringAsync();
+
+                        if (data != null)
+                        {
+                            root.Shows = JsonSerializer.Deserialize<List<AnimeTitle>>(data)!;
+                        }
+                        else
+                        {
+                            throw new ArgumentException("Error: No returned data.");
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
 
     void FormSubmitted(EditContext editContext)
     {
