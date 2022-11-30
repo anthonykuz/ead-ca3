@@ -29,19 +29,15 @@
 }
 
 body {
-    /*background-color: #343a40;*/
-    /*background-color: #232321;*/
     background-color: #1c1c1a;
 }
 
 h1 {
     cursor: default;
     font-weight: 700;
-    /*color: #d9480f;*/
     color: #FC5830;
     display: flex;
     justify-content: center;
-    /*margin: 1.6rem;*/
     margin-bottom: 1.3rem;
 }
 
@@ -53,7 +49,6 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    /*height: auto;*/
     border-radius: 2rem;
 }
 
@@ -68,7 +63,6 @@ input {
     box-sizing: border-box;
     font-size: 26px;
     font-weight: 400;
-    /*color: #868e96;*/
     color: #dee2e6;
     outline: none;
     width: 20rem;
@@ -86,11 +80,9 @@ button {
 .subheading {
     cursor: default;
     font-weight: 600;
-    /*color: #495057;*/
     color: #fff;
     display: flex;
     justify-content: center;
-    /*margin: 1.6rem;*/
     margin-top: -1.6rem;
 }
 
@@ -119,15 +111,12 @@ button {
 
 .container-img {
     display: grid;
-    /*grid-template-columns: repeat(1, 1fr);*/
     grid-template-columns: 1fr;
-    /*grid-template-rows: repeat(2, 1fr);*/
     grid-template-rows: 17rem 2rem;
     width: 13rem;
 }
 
 .el {
-    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);*/
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.244);
     transition: all 0.3s;
     border-radius: 5rem;
@@ -137,7 +126,6 @@ button {
 }
 
 .el:hover {
-    /*background-color: #868e96;*/
     transition: all 0.3s;
 }
 
@@ -145,15 +133,10 @@ button {
     margin-bottom: 2rem;
     margin-right: 0.5rem;
     transition: all 0.3s;
-    /*background-color: #495057;*/
     background-color: #232321;
-    /*display: flex;*/
-    /*justify-content: space-between;*/
 }
 
 .el--1:hover {
-    /*background-color: #868e96;*/
-    /*background-color: #dee2e6;*/
     background-color: #bcbdbf;
     transition: all 0.3s;
 }
@@ -185,14 +168,11 @@ button {
 
 .el--2,
 .el--3 {
-    /*background-color: #495057;*/
-    /*background-color: #1c1c1a;*/
     background-color: #232321;
 }
 
 .el--2 {
     position: sticky;
-    /*grid-column: 1 / 1;*/
     border-radius: 2rem;
     margin-right: 2rem;
     height: 24rem;
@@ -220,7 +200,6 @@ button {
     padding: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s;
-    /*color: #868e96;*/
     color: #dee2e6;
     cursor: pointer;
 }
@@ -232,7 +211,6 @@ button {
     padding: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s;
-    /*color: #868e96;*/
     color: #dee2e6;
     cursor: pointer;
 }
@@ -254,15 +232,11 @@ button {
 }
 
 .fact:hover {
-    /*background-color: #868e96;*/
-    /*background-color: #dee2e6;*/
     background-color: #bcbdbf;
     transition: all 0.3s;
 }
 
 .fact-collapsed:hover {
-    /*background-color: #868e96;*/
-    /*background-color: #dee2e6;*/
     background-color: #bcbdbf;
     transition: all 0.3s;
 }
@@ -308,15 +282,10 @@ button {
 /* IDs                   */
 /*-----------------------*/
 
-#anime-img {
-    /*grid-row: 1 / -1;*/
-}
-
 #anime-name {
     font-weight: 700;
     margin-top: 1.9rem;
     text-align: center;
-    /*color: #212529;*/
     color: #dee2e6;
     grid-row: 2 / -1;
 }

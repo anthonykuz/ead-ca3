@@ -8,13 +8,13 @@
 
 @*List of titles that appear in search*@
 <datalist id="titles">
-    <option value="Bleach"/>
+    <option value="Bleach" />
     <option value="Attack on Titan" />
-    <option value="Dragon Ball"/>
+    <option value="Dragon Ball" />
     <option value="One Piece" />
-    <option value="Demon Slayer"/>
-    <option value="Gintama"/>
-    <option value="Jujutsu Kaisen"/>
+    <option value="Demon Slayer" />
+    <option value="Gintama" />
+    <option value="Jujutsu Kaisen" />
     <option value="Hunter X Hunter" />
 </datalist>
 
@@ -47,7 +47,7 @@
             <div class="container-img">
                 @if (selectedTitle.Image != null)
                 {
-                    <img id="anime-img" src="@selectedTitle.Image" alt="Anime artwork" />
+                    <img src="@selectedTitle.Image" alt="Anime artwork" />
                     <div id="anime-name">
                         <hr />
                         <span id="">@selectedTitle.OutName</span>
@@ -129,26 +129,34 @@
     void UpdateQuery(ChangeEventArgs args)
     {
         // Updates query string with every key press
-        input.Query = args.Value?.ToString();   
+        input.Query = args.Value?.ToString();
     }
 
     void RunQuery(string input)
     {
-        // Corrects input to include '_' and lowercase
-        input = selectedTitle.FixInputString(input);
-
-        foreach (AnimeTitle title in root.Shows!)
+        if (input.Equals("") || input.Equals(null))
         {
-            // Matches title to input and creates copy
-            if (title.Name!.Equals(input))
-            {
-                selectedTitle = new AnimeTitle();
-                selectedTitle = title;
-            }
+            selectedTitle = new AnimeTitle();
+            selectedTitle.OutputName("Invalid Title");
         }
+        else
+        {
+            // Corrects input to include '_' and lowercase
+            input = selectedTitle.FixInputString(input);
 
-        // Insert markup and correct output name to remove '_' and uppercase 
-        selectedTitle.InsertHTML();
-        selectedTitle.OutputName(input);
+            foreach (AnimeTitle title in root.Shows!)
+            {
+                // Matches title to input and creates copy
+                if (title.Name!.Equals(input))
+                {
+                    selectedTitle = new AnimeTitle();
+                    selectedTitle = title;
+                }
+            }
+
+            // Insert markup and correct output name to remove '_' and uppercase
+            selectedTitle.InsertHTML();
+            selectedTitle.OutputName(input);
+        }
     }
 }

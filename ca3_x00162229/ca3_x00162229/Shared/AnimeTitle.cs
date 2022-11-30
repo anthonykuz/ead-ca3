@@ -29,10 +29,6 @@ namespace ca3_x00162229.Shared
         public string? OutName { get; set; }
 
         // --------------------- Methods ---------------------
-        public override string ToString()
-        {
-            return $"Name: {Name}, Image: {Image} Fact Count: {Facts.Count}";
-        }
 
         public void InsertHTML()
         {
