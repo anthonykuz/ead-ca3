@@ -13,6 +13,9 @@
     <option value="Dragon Ball"/>
     <option value="One Piece" />
     <option value="Demon Slayer"/>
+    <option value="Gintama"/>
+    <option value="Jujutsu Kaisen"/>
+    <option value="Hunter X Hunter" />
 </datalist>
 
 <div class="container-global">
@@ -27,7 +30,7 @@
         @*Search Bar*@
         <div class="container-search">
             <div class="el el--1">
-                <input type="text" placeholder="Search..." @bind-value="input.Query" list="titles">
+                <input type="text" placeholder="Search..." value="@input.Query" list="titles" @oninput="@UpdateQuery" @onkeydown="@KeyPress">
             </div>
             <div class="el el--1-btn ">
                 <button @onclick='() => RunQuery(input.Query)'>
@@ -114,6 +117,21 @@
         }
     }
 
+    void KeyPress(KeyboardEventArgs args)
+    {
+        if (args.Key.Equals("Enter") && input.Query != null)
+        {
+            RunQuery(input.Query);
+            StateHasChanged();
+        }
+    }
+
+    void UpdateQuery(ChangeEventArgs args)
+    {
+        // Updates query string with every key press
+        input.Query = args.Value?.ToString();   
+    }
+
     void RunQuery(string input)
     {
         // Corrects input to include '_' and lowercase
@@ -124,7 +142,10 @@
             // Matches title to input and creates copy
             if (title.Name!.Equals(input))
             {
+                Console.WriteLine($"💥💥💥: selected count: {title.Facts!.Count}");
+                selectedTitle = new AnimeTitle();
                 selectedTitle = title;
+                Console.WriteLine($"💥💥💥: copied count: {selectedTitle.Facts.Count}");
             }
         }
 

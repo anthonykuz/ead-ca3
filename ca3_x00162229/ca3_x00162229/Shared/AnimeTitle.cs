@@ -15,7 +15,6 @@ namespace ca3_x00162229.Shared
         // JSON attributes
         public int AnimeID { get; set; }
         public string? Name { get; set; }
-        public int FactNumber { get; set; }
         public string? Image { get; set; }
         public List<Fact>? Facts { get; set; }
 
@@ -36,11 +35,15 @@ namespace ca3_x00162229.Shared
 
         public void InsertHTML()
         {
-            foreach (Fact item in Facts!)
+            if (Markup == null)
             {
-                Markup += $"<div class=\"fact-collapsed\"><h6>Fact: {item.fact_id}</h6><p>{item.fact}</p></div>";
+                foreach (Fact item in Facts!)
+                {
+                    Markup += $"<div class=\"fact-collapsed\"><h6>Fact: {item.fact_id}</h6><p>{item.fact}</p></div>";
+                }
             }
         }
+            
 
         public string FixInputString(string inputName)
         {
@@ -51,6 +54,5 @@ namespace ca3_x00162229.Shared
         {
             OutName = myTI.ToTitleCase(inputName.Replace(@"_", " "));
         }
-
     }
 }
