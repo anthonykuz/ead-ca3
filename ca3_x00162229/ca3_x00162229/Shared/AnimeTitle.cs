@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 using Newtonsoft.Json.Linq;
 using System.Globalization;
+using System.Text;
 using System.Xml.Linq;
 
 namespace ca3_x00162229.Shared
@@ -27,7 +28,7 @@ namespace ca3_x00162229.Shared
         // Output name
         public string? OutName { get; set; }
 
-        // Methods
+        // --------------------- Methods ---------------------
         public override string ToString()
         {
             return $"Name: {Name}, Image: {Image} Fact Count: {Facts.Count}";
@@ -44,7 +45,6 @@ namespace ca3_x00162229.Shared
             }
         }
             
-
         public string FixInputString(string inputName)
         {
             return myTI.ToLower(inputName.Replace(@" ", "_"));

@@ -1,5 +1,4 @@
 ﻿@page "/"
-@using System.Text.Json;
 @inject IJSRuntime jsRuntimeService
 
 <PageTitle>The Anime Index</PageTitle>
@@ -7,6 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&display=swap" rel="stylesheet">
 
+@*List of titles that appear in search*@
 <datalist id="titles">
     <option value="Bleach"/>
     <option value="Attack on Titan" />
@@ -82,7 +82,7 @@
 
     async Task AddTitles()
     {
-        // Base URL (based of the heroku hosted API)
+        // Base URL (based of the heroku hosted API, not available since 28/11/22)
         //string baseUrl = $"https://anime-facts-rest-api.herokuapp.com/api/v1/{FixInputString(input)}";
 
         // Mock API result
@@ -142,10 +142,8 @@
             // Matches title to input and creates copy
             if (title.Name!.Equals(input))
             {
-                Console.WriteLine($"💥💥💥: selected count: {title.Facts!.Count}");
                 selectedTitle = new AnimeTitle();
                 selectedTitle = title;
-                Console.WriteLine($"💥💥💥: copied count: {selectedTitle.Facts.Count}");
             }
         }
 
