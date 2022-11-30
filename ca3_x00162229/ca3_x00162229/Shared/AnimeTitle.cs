@@ -25,17 +25,20 @@ namespace ca3_x00162229.Shared
         // Creates a TextInfo based on the "en-US" (for letter casing, removing underscores)
         private readonly TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
+        // Output name
+        public string? OutName { get; set; }
+
         // Methods
         public override string ToString()
         {
             return $"Name: {Name}, Image: {Image} Fact Count: {Facts.Count}";
         }
 
-        public void InsertHTML(List<string> facts)
+        public void InsertHTML()
         {
-            foreach (string item in facts)
+            foreach (Fact item in Facts!)
             {
-                Markup += item;
+                Markup += $"<div class=\"fact-collapsed\"><h6>Fact: {item.fact_id}</h6><p>{item.fact}</p></div>";
             }
         }
 
@@ -44,11 +47,10 @@ namespace ca3_x00162229.Shared
             return myTI.ToLower(inputName.Replace(@" ", "_"));
         }
 
-        public string OutputName(string inputName)
+        public void OutputName(string inputName)
         {
-            return myTI.ToTitleCase(inputName.Replace(@"_", " "));
+            OutName = myTI.ToTitleCase(inputName.Replace(@"_", " "));
         }
 
-        
     }
 }

@@ -4,6 +4,6 @@
     {
         // Attributes
         public int fact_id { get; set; }
-        public string fact { get; set; }
+        public string? fact { get; set; }
     }
 }

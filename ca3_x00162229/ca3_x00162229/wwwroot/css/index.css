@@ -117,10 +117,6 @@ button {
     justify-content: center;
 }
 
-form {
-    margin-right: -50rem;
-}
-
 .container-img {
     display: grid;
     /*grid-template-columns: repeat(1, 1fr);*/

@@ -7,6 +7,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&display=swap" rel="stylesheet">
 
+<datalist id="titles">
+    <option value="Bleach"/>
+    <option value="Attack on Titan" />
+    <option value="Dragon Ball"/>
+    <option value="One Piece" />
+    <option value="Demon Slayer"/>
+</datalist>
+
 <div class="container-global">
 
     @*Header*@
@@ -18,16 +26,15 @@
 
         @*Search Bar*@
         <div class="container-search">
-            @*<EditForm Model="@input" OnSubmit=@FormSubmitted>
-            </EditForm>*@
-                <div class="el el--1">
-                    <input type="text" placeholder="Search..." @bind-value="input.Query">
-                </div>
-                <div class="el el--1-btn ">
-                    <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
-                    </button>
-                </div>    
+            <div class="el el--1">
+                <input type="text" placeholder="Search..." @bind-value="input.Query" list="titles">
+            </div>
+            <div class="el el--1-btn ">
+                <button @onclick='() => RunQuery(input.Query)'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
+                </button>
+            </div>
+
         </div>
     </div>
 
@@ -40,7 +47,7 @@
                     <img id="anime-img" src="@selectedTitle.Image" alt="Anime artwork" />
                     <div id="anime-name">
                         <hr />
-                        <span id="">@selectedTitle.Name</span>
+                        <span id="">@selectedTitle.OutName</span>
                     </div>
                 }
             </div>
@@ -49,7 +56,7 @@
         @*Fact Cards*@
         <div class="el el--3" onclick="touchFact(event)">
             <div class="listOfFacts">
-                @*@((MarkupString)selectedTitle.Markup!)*@
+                @((MarkupString)selectedTitle.Markup!)
             </div>
         </div>
     </div>
@@ -62,8 +69,6 @@
 
     AnimeTitle selectedTitle = new AnimeTitle();
     Rootobject root = new Rootobject();
-
-    string? LastSubmitResult;
 
     // ---------------------------------------------
 
@@ -109,14 +114,22 @@
         }
     }
 
-    void FormSubmitted(EditContext editContext)
+    void RunQuery(string input)
     {
-        bool formIsValid = editContext.Validate();
-        LastSubmitResult =
-          formIsValid
-          ? "Success - form was valid"
-          : "Failure - form was invalid";
+        // Corrects input to include '_' and lowercase
+        input = selectedTitle.FixInputString(input);
 
-        StateHasChanged();
+        foreach (AnimeTitle title in root.Shows!)
+        {
+            // Matches title to input and creates copy
+            if (title.Name!.Equals(input))
+            {
+                selectedTitle = title;
+            }
+        }
+
+        // Insert markup and correct output name to remove '_' and uppercase 
+        selectedTitle.InsertHTML();
+        selectedTitle.OutputName(input);
     }
 }
