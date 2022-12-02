@@ -30,6 +30,7 @@ namespace ca3_x00162229.Shared
 
         // --------------------- Methods ---------------------
 
+        // Adds facts markup for object
         public void InsertHTML()
         {
             if (Markup == null)
@@ -40,12 +41,14 @@ namespace ca3_x00162229.Shared
                 }
             }
         }
-            
+        
+        // Alters input string when querying root object list
         public string FixInputString(string inputName)
         {
             return myTI.ToLower(inputName.Replace(@" ", "_"));
         }
 
+        // Alters input string for output
         public void OutputName(string inputName)
         {
             OutName = myTI.ToTitleCase(inputName.Replace(@"_", " "));

@@ -69,17 +69,20 @@
 @code {
     // User input
     UserInput input = new UserInput();
-
+    // Selected object
     AnimeTitle selectedTitle = new AnimeTitle();
+    // List of objects
     Rootobject root = new Rootobject();
 
     // ---------------------------------------------
 
+    // Run on page initialization
     protected async override Task OnInitializedAsync()
     {
         await AddTitles();
     }
 
+    // Get response
     async Task AddTitles()
     {
         // Base URL (based of the heroku hosted API, not available since 28/11/22)
@@ -101,6 +104,7 @@
 
                         if (data != null)
                         {
+                            // Convert JSON objects into AnimeTitle objects
                             root.Shows = JsonSerializer.Deserialize<List<AnimeTitle>>(data)!;
                         }
                         else
@@ -117,6 +121,7 @@
         }
     }
 
+    // Listen for 'Enter' key press
     void KeyPress(KeyboardEventArgs args)
     {
         if (args.Key.Equals("Enter") && input.Query != null)
@@ -126,12 +131,14 @@
         }
     }
 
+    // Update query string per keyboard input
     void UpdateQuery(ChangeEventArgs args)
     {
         // Updates query string with every key press
         input.Query = args.Value?.ToString();
     }
 
+    // Query against root object list
     void RunQuery(string input)
     {
         if (input.Equals("") || input.Equals(null))
